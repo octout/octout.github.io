@@ -96,14 +96,14 @@
     };
 
     tableau.registerConnector(myConnector);
-})();
 
-$(document).ready(function () {
-    $("#submitButton").click(function () {
-        var apikey = document.getElementById('apikey').value;
-        tableau.connectionData = JSON.stringify({apikey: apikey });
-        tableau.connectionName = "AzureMapsWeatherService";
-        tableau.submit();
+    $(document).ready(function () {
+        $("#submitButton").click(function () {
+            var apikey = document.getElementById('apikey').value;
+            tableau.connectionData = JSON.stringify({apikey: apikey });
+            tableau.connectionName = "AzureMapsWeatherService";
+            tableau.submit();
+        });
     });
 
-});
+})();
