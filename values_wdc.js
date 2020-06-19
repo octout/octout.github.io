@@ -48,8 +48,8 @@
             dataType: tableau.dataTypeEnum.float
         }];
         var tableSchema = {
-            id: "azure maps API",
-            alias: "daily weaterh forercasts",
+            id: "azuremapsAPI",
+            alias: "dailyweaterhforercasts",
             columns: cols
         };
     
@@ -102,7 +102,7 @@ $(document).ready(function () {
     $("#submitButton").click(function () {
         var apikey = document.getElementById('apikey').value;
         tableau.connectionData = JSON.stringify({apikey: apikey });
-        tableau.connectionName = "Azure Maps Weather Service";
+        tableau.connectionName = "AzureMapsWeatherService";
         tableau.submit();
     });
 
