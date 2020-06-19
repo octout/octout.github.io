@@ -68,7 +68,7 @@
                     $.getJSON(apiCall, function(resp) {                  
                         var forecast = resp.forecasts,
                         // Iterate over the JSON object
-                        for(var j = 0, len2 = forecast.length; j < len2; j++) {
+                        for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
                                 "Obs_id":json[t].Obs_id,
                                 "Obs_name":json[t].Obs_name,
@@ -85,12 +85,11 @@
                                 "windspeed":forecast[i].wind.speed.value,
                                 "windgustspeed":forecast[i].windGust.speed.value
                             });
-
                         };
                     table.appendRows(tableData);
-                    doneCallback();
                     });
                 })(i);
+            doneCallback();
             };
         });
     };
