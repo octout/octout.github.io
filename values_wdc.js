@@ -88,7 +88,7 @@
                         }
                     table.appendRows(tableData);
                     });
-                })(i)
+                })(i);
                 doneCallback();
             }
      
