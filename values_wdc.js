@@ -72,7 +72,7 @@
                             tableData.push({
                                 "Obsid":json[t].Obsid,
                                 "Obsname":json[t].Obsname,
-                                "date": Date(forecast[j].date),
+                                "date": forecast[j].date,
                                 "weather": forecast[j].iconPhrase,
                                 "temp": forecast[j].temperature.value,
                                 "humidity": forecast[j].relativeHumidity,
