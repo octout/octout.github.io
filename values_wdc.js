@@ -1,3 +1,4 @@
+  
 (function () {
     var myConnector = tableau.makeConnector();
     myConnector.getSchema = function (schemaCallback) {
