@@ -87,9 +87,10 @@
                             });
                         }
                     table.appendRows(tableData);
+                    doneCallback();
                     });
                 })(i);
-                doneCallback();
+
             }
      
         });
