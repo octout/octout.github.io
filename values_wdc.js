@@ -1,4 +1,3 @@
-  
 (function () {
     var myConnector = tableau.makeConnector();
     myConnector.getSchema = function (schemaCallback) {
@@ -62,12 +61,12 @@
         str_apikey = args.apikey;
         $.getJSON("Obs.json", function(json) { //ローカルのjsonへアクセス
             for (var i = 0, len = json.length; i < len; i++) {
-                var tableData = [];
                 dateString = "query=" + json[i].lat + "," + json[i].lon,
                 apiCall = "https://atlas.microsoft.com/weather/forecast/hourly/json?subscription-key=" + str_apikey +"&api-version=1.0&" + dateString + "&duration=72&language=ja";
                 (function(t){
                     $.getJSON(apiCall, function(resp) {                  
                         var forecast = resp.forecasts,
+                            tableData = [];
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
@@ -86,12 +85,13 @@
                                 "windspeed":forecast[i].wind.speed.value,
                                 "windgustspeed":forecast[i].windGust.speed.value
                             });
-                        };
+                        }
                     table.appendRows(tableData);
+                    doneCallback();
                     });
-                })(i);
-            doneCallback();
-            };
+                })(i)
+            } 
+     
         });
     };
 
