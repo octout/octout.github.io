@@ -63,15 +63,14 @@
             for (var i = 0, len = json.length; i < len; i++) {
                 dateString = "query=" + json[i].lat + "," + json[i].lon,
                 apiCall = "https://atlas.microsoft.com/weather/forecast/hourly/json?subscription-key=" + str_apikey +"&api-version=1.0&" + dateString + "&duration=72&language=ja";
-                (function(t){
                     $.getJSON(apiCall, function(resp) {                  
                         var forecast = resp.forecasts,
                             tableData = [];
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
-                                "Obs_id":json[t].Obs_id,
-                                "Obs_name":json[t].Obs_name,
+                                "Obs_id":json[int(j/72)].Obs_id,
+                                "Obs_name":json[int(j/72)].Obs_name,
                                 "date":forecast[j].date,
                                 "weather":forecast[j].iconPhrase,
                                 "temp":forecast[j].temperature.value,
@@ -89,10 +88,7 @@
                     table.appendRows(tableData);
                     doneCallback();
                     });
-                })(i);
-
             }
-     
         });
     };
 
