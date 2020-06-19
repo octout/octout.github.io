@@ -87,12 +87,11 @@
                             });
 
                         };
-
+                    table.appendRows(tableData);
+                    doneCallback();
                     });
                 })(i);
             };
-            table.appendRows(tableData);
-            doneCallback();
         });
     };
 
