@@ -2,11 +2,11 @@
     var myConnector = tableau.makeConnector();
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
-            id: "Obsid",
+            id: "Obs_id",
             alias: "Obsid",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Obsname",
+            id: "Obs_name",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "date",
@@ -70,11 +70,11 @@
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
-                                "Obsid":json[t].Obsid,
-                                "Obsname":json[t].Obsname,
-                                "date": forecast[j].date,
-                                "weather": forecast[j].iconPhrase,
-                                "temp": forecast[j].temperature.value,
+                                "Obs_id":json[t].Obsid,
+                                "Obs_name":json[t].Obsname,
+                                "date":forecast[j].date,
+                                "weather":forecast[j].iconPhrase,
+                                "temp":forecast[j].temperature.value,
                                 "humidity": forecast[j].relativeHumidity,
                                 "rainProbability":forecast[i].precipitationProbability,
                                 "rainvalue":forecast[i].rain.value,
