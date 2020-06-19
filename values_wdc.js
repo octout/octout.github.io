@@ -70,8 +70,8 @@
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
-                                "Obs_id":json[t].Obsid,
-                                "Obs_name":json[t].Obsname,
+                                "Obs_id":json[t].Obs_id,
+                                "Obs_name":json[t].Obs_name,
                                 "date":forecast[j].date,
                                 "weather":forecast[j].iconPhrase,
                                 "temp":forecast[j].temperature.value,
