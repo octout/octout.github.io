@@ -66,7 +66,7 @@
                 (function(t){
                     $.getJSON(apiCall, function(resp) {                  
                         var forecast = resp.forecasts,
-                        tableData = [];
+                            tableData = [];
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
