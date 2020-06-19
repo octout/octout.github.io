@@ -3,14 +3,14 @@
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
             id: "Obs_id",
-            alias: "Obs_id",
+            alias: "Obsid",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "Obs_name",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "date",
-            dataType: tableau.dataTypeEnum.datetime
+            dataType: tableau.dataTypeEnum.string
         }, {
             id: "weather",
             alias: "weather",
@@ -48,8 +48,8 @@
             dataType: tableau.dataTypeEnum.float
         }];
         var tableSchema = {
-            id: "earthquakeFeed",
-            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            id: "azuremapsAPI",
+            alias: "dailyweaterhforercasts",
             columns: cols
         };
     
@@ -72,9 +72,9 @@
                             tableData.push({
                                 "Obs_id":json[t].Obs_id,
                                 "Obs_name":json[t].Obs_name,
-                                "date": forecast[j].date,
-                                "weather": forecast[j].iconPhrase,
-                                "temp": forecast[j].temperature.value,
+                                "date":forecast[j].date,
+                                "weather":forecast[j].iconPhrase,
+                                "temp":forecast[j].temperature.value,
                                 "humidity": forecast[j].relativeHumidity,
                                 "rainProbability":forecast[i].precipitationProbability,
                                 "rainvalue":forecast[i].rain.value,
@@ -102,7 +102,7 @@ $(document).ready(function () {
     $("#submitButton").click(function () {
         var apikey = document.getElementById('apikey').value;
         tableau.connectionData = JSON.stringify({apikey: apikey });
-        tableau.connectionName = "Azure Maps Weather Service";
+        tableau.connectionName = "AzureMapsWeatherService";
         tableau.submit();
     });
 
