@@ -2,11 +2,11 @@
     var myConnector = tableau.makeConnector();
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
-            id: "Obs_id",
-            alias: "Obs_id",
+            id: "Obsid",
+            alias: "Obsid",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "Obs_name",
+            id: "Obsname",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "date",
@@ -48,8 +48,8 @@
             dataType: tableau.dataTypeEnum.float
         }];
         var tableSchema = {
-            id: "earthquakeFeed",
-            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            id: "azure maps API",
+            alias: "daily weaterh forercasts",
             columns: cols
         };
     
@@ -70,8 +70,8 @@
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
-                                "Obs_id":json[t].Obs_id,
-                                "Obs_name":json[t].Obs_name,
+                                "Obsid":json[t].Obsid,
+                                "Obsname":json[t].Obsname,
                                 "date": forecast[j].date,
                                 "weather": forecast[j].iconPhrase,
                                 "temp": forecast[j].temperature.value,
