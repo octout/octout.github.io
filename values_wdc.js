@@ -66,7 +66,6 @@
                 apiCall = "https://atlas.microsoft.com/weather/forecast/hourly/json?subscription-key=" + str_apikey +"&api-version=1.0&" + dateString + "&duration=72&language=ja";
                     $.getJSON(apiCall, function(resp) {                  
                         var forecast = resp.forecasts,
-                            tableData = [];
                         // Iterate over the JSON object
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
@@ -88,9 +87,9 @@
                         }
                     });
             }
-            table.appendRows(tableData);
-            doneCallback();
         });
+        table.appendRows(tableData);
+        doneCallback();
     };
 
     tableau.registerConnector(myConnector);
