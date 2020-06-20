@@ -70,7 +70,7 @@
                         for(var j = 0, len = forecast.length; j < len; j++) {
                             tableData.push({
                                 "Obs_id":json[Math.floor(j/72)].Obs_id,
-                                "Obs_name":json[Math.floor(j/72].Obs_name,
+                                "Obs_name":json[Math.floor(j/72)].Obs_name,
                                 "date":forecast[j].date,
                                 "weather":forecast[j].iconPhrase,
                                 "temp":forecast[j].temperature.value,
