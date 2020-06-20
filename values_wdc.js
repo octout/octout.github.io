@@ -59,6 +59,7 @@
     myConnector.getData = function(table, doneCallback) {
         var args = JSON.parse(tableau.connectionData);
         str_apikey = args.apikey;
+        var tableData = [];
         $.getJSON("Obs.json", function(json) { //ローカルのjsonへアクセス
             for (var i = 0, len = json.length; i < len; i++) {
                 dateString = "query=" + json[i].lat + "," + json[i].lon,
@@ -85,10 +86,10 @@
                                 "windgustspeed":forecast[i].windGust.speed.value
                             });
                         }
-                    table.appendRows(tableData);
-                    doneCallback();
                     });
             }
+            table.appendRows(tableData);
+            doneCallback();
         });
     };
 
