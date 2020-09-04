@@ -10,4 +10,5 @@ tableauからWDCで接続するページです。
 
 ### values_wdc.js
 APIをtableauに読み込むJavascriptファイルです。
-Obs.jsonから位置情報を読み込み、AzureMapsWeatherServiceのAPIへGETメソッドでjsonファイルを取得します。
+Obs.jsonから位置情報を読み込み、AzureMapsWeatherServiceのAPIへGETメソッドでjsonファイルを取得し、
+TableauのWDCへ情報を渡します。
