@@ -1,5 +1,6 @@
 # octout.github.io
-公開用
+AzureMapsWeatherServiceのAPIを利用する
+TableauWDC用ページ
 
 ### Obs.json
 観測地点名およびその緯度経度の定義ファイルです
